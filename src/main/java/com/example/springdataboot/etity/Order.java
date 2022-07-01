@@ -11,6 +11,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @ToString
 @Entity
 @Table(name = "orders")
@@ -21,6 +22,6 @@ public class Order {
     @CreatedDate
     private LocalDateTime createdAt;
     private int status;
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order" ,cascade = CascadeType.ALL)
     private Set<OrderDetail> orderDetails;
 }

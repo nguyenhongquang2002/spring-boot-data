@@ -10,6 +10,7 @@ import java.io.Serializable;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @Embeddable
 public class OrderDetailid implements Serializable {
     @Column(name = "oder_id")

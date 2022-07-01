@@ -9,6 +9,7 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @ToString
 @Entity
 @Table(name = "accounts")
@@ -17,7 +18,7 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)  //chú Ý All hoặc các trường hợp khác
     @JoinColumn(name = "identityCardId")
     private IdentityCard identityCard;
 }
